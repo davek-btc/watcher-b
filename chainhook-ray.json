@@ -1,0 +1,25 @@
+{
+    "name": "Get Bal",
+    "uuid": "28b49912-64dc-4c85-b7d5-8d669eb449eb",
+    "chain": "stacks",
+    "version": 1,
+    "networks": {
+        "testnet": {
+            "if_this": {
+                "scope": "contract_call",
+                "method": "get-monitored-address-balance",
+                "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.watcher"
+            },
+            "end_block": null,
+            "then_that": {
+                "http_post": {
+                    "url": "https://03ec6eb9b851.ngrok.app/api/get-monitored-address-balance",
+                    "authorization_header": "Bearer 12345"
+                }
+            },
+            "start_block": 138908,
+            "decode_clarity_values": true,
+            "expire_after_occurrence": null
+        }
+    }
+}
